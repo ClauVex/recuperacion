@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar -->
+      <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">ADONIS CAR SHOP ADMINISTRADOR</div>
+        <div class="list-group list-group-flush">
+          <div>
+              <a href="/clientes" class="list-group-item list-group-item-action bg-light">CLIENTES</a>
+          </div>
+          <div>
+              <a href="/mecanico_responsable" class="list-group-item list-group-item-action bg-light">MECANICOS</a>
+          </div>
+          <div>
+              <a href="/repuestos" class="list-group-item list-group-item-action bg-light">REFACCIONES</a>
+          </div>
+          <div>
+              <a href="/factura" class="list-group-item list-group-item-action bg-light">TRANSACCIONES</a>
+          </div>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button class="btn btn-primary" id="menu-toggle">OCULTAR MENU</button>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">MENU PRINCIPAL<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">VIDEO EXPLICACION</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="container-fluid">
+          <h1 class="mt-4 mb-3">Seccion de Vehiculos</h1>
+          <div class="row">
+              <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                  <img class="card-img-top" src="https://www.joc.com/sites/default/files/field_feature_image/KiavehiclesGlovisfacilityPhillyOct292019.JPG" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">AGREGAR VEHICULO</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Añadir vehiculo a la base de datos del taller</h6>
+                    <a href="/vehiculos/crear" class="btn btn-primary">Agregar Vehiculo &rarr;</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                  <img class="card-img-top" src="http://blog.smallbizdream.com/wp-content/uploads/2017/11/avatar-11.jpg" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">APARTADO CLIENTES</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Manejo de los clientes de el sistema</h6>
+                    <a href="/clientes" class="btn btn-primary">Ir a Clientes &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#vehiculos">TABLA VEHICULOS</a></li>
+                <li><a data-toggle="tab" href="#clientes">TABLA CLIENTES</a></li>
+            </ul>
+            <div class="tab-content">
+              <div id="vehiculos" class="tab-pane fade in active">
+                <div class="jumbotron text-center">
+                  <h3>VEHICULOS REGISTRADOS</h3>
+                </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>ID VEHICULO</th>
+                        <th>MODELO</th>
+                        <th>COLOR</th>
+                        <th>FECHA DE INGRESO</th>
+                        <th>HORA DE INGRESO</th>
+                        <th>ID DE CLIENTE</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @each(vehiculo in vehiculos)
+                        <tr>
+                          <td>{{vehiculo.id}}</td>
+                          <td>{{vehiculo.MODELO}}</td>
+                          <td>{{vehiculo.COLOR}}</td>
+                          <td>{{vehiculo.FECHA_ENT}}</td>
+                          <td>{{vehiculo.HORA_ENT}}</td>
+                          <td>{{vehiculo.CLIENTE_id}}</td>
+                          <td>
+                            <li>
+                              <a class="btn btn-primary" href="/vehiculos/editar/{{vehiculo.id}}">Editar</a>
+                            </li>
+                          </td>
+                          <td>
+                            <li>
+                              <a class="btn btn-primary" href="/vehiculos/eliminar/{{vehiculo.id}}">Eliminar</a>
+                            </li>
+                          </td>
+                        </tr>
+                      @endeach
+                    </tbody>
+                </table>
+              </div>
+              <div id="clientes" class="tab-pane fade">
+                <div class="jumbotron text-center">
+                  <h3>CLIENTES</h3>
+                </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>RFC CLIENTE</th>
+                        <th>NOMBRE</th>
+                        <th>DIRECCION</th>
+                        <th>TELEFONO</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @each(cliente in clientes)
+                        <tr>
+                          <td>{{cliente.id}}</td>
+                          <td>{{cliente.NOMBRE}}</td>
+                          <td>{{cliente.DIRECCION}}</td>
+                          <td>{{cliente.TELEFONO}}</td>
+                        </tr>
+                      @endeach
+                    </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- /#page-content-wrapper -->
+
+    </div>
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+  </body>
+</html>

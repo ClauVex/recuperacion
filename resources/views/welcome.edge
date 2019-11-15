@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar -->
+      <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">ADONIS CAR SHOP ADMINISTRADOR</div>
+        <div class="list-group list-group-flush">
+          <div>
+              <a href="/clientes" class="list-group-item list-group-item-action bg-light">CLIENTES</a>
+          </div>
+          <div>
+              <a href="/mecanico_responsable" class="list-group-item list-group-item-action bg-light">MECANICOS</a>
+          </div>
+          <div>
+              <a href="/repuestos" class="list-group-item list-group-item-action bg-light">REFACCIONES</a>
+          </div>
+          <div>
+              <a href="/factura" class="list-group-item list-group-item-action bg-light">TRANSACCIONES</a>
+          </div>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button class="btn btn-primary" id="menu-toggle">OCULTAR MENU</button>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">MENU PRINCIPAL<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">VIDEO EXPLICACION</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="container">
+              <h1 class="mt-4 mb-3">INFORMACION DEL TALLER</h1>
+              <div class="row">
+                <div class="col-lg-6">
+                  <img class="img-fluid rounded mb-4" src="https://res.cloudinary.com/fleetnation/image/private/c_fit,w_1120/g_south,l_text:style_gothic2:%C2%A9%20Cavan%20Images,o_20,y_10/g_center,l_watermark4,o_25,y_50/v1565730120/q7nhe4amf5mbtimo601w.jpg" alt="">
+                </div>
+                  <div class="col-lg-6">
+                    <h2>Acerca de Nosotros</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+                  </div>
+                </div>
+                <h2>Funcionalidades</h2>
+                <div class="row">
+                  <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center">
+                      <img class="card-img-top" src="https://media.istockphoto.com/photos/auto-mechanic-service-and-repair-picture-id652660058?k=6&m=652660058&s=612x612&w=0&h=kaPNUKxm6-DVr_OEs5fOjeXpe5hfESqc-NLwKVHswek=" alt="">
+                      <div class="card-body">
+                        <h4 class="card-title">Mantenimiento de Vehiculos</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Servicio las 24 hrs</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center">
+                      <img class="card-img-top" src="https://www.eurocarparts.com/catalogimages/categories/102x136/m_ukcp2_06.jpg" alt="">
+                      <div class="card-body">
+                        <h4 class="card-title">Cambio de Partes</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Refacciones y piezas de alta gama</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center">
+                      <img class="card-img-top" src="https://www.rd.com/wp-content/uploads/2018/02/19_Things-Your-Car-Mechanic-Won%E2%80%99t-Tell-You_727443778_4-PM-production-760x506.jpg" alt="">
+                      <div class="card-body">
+                        <h4 class="card-title">Registro de Mecanicos</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Datos personales y Especialidad</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.row -->
+
+                <!-- Our Customers -->
+                <h2>Nuestros clientes</h2>
+                <div class="row">
+                  <div class="col-lg-2 col-sm-4 mb-4">
+                    <img class="img-fluid" src="https://www.excelenciasdelmotor.com/sites/default/files/sites/default/files/imagenes-portada-ffp/chevroletlogo.jpg" alt="">
+                  </div>
+                  <div class="col-lg-2 col-sm-4 mb-4">
+                    <img class="img-fluid" src="https://logodix.com/logo/49578.png" alt="">
+                  </div>
+                  <div class="col-lg-2 col-sm-4 mb-4">
+                    <img class="img-fluid" src="https://images.carshop.co.uk/news-section/CARSHOPLOOOO.PNG" alt="">
+                  </div>
+                  <div class="col-lg-2 col-sm-4 mb-4">
+                    <img class="img-fluid" src="http://plazadellago.net/wp-content/uploads/2019/07/Logo-Car-Shop.jpg" alt="">
+                  </div>
+                  <div class="col-lg-2 col-sm-4 mb-4">
+                    <img class="img-fluid" src="https://yt3.ggpht.com/a/AGF-l7-LJiCmwCZuoov-lxRJe6UD__dXQ8JmVoBGIg=s900-c-k-c0xffffffff-no-rj-mo" alt="">
+                  </div>
+                  <div class="col-lg-2 col-sm-4 mb-4">
+                    <img class="img-fluid" src="https://assets.bigcartel.com/theme_images/45036863/csr_shoplogo.png?auto=format&fit=max&h=500&w=1800" alt="">
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- /#page-content-wrapper -->
+
+    </div>
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+  </body>
+</html>

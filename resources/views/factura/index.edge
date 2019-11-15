@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar -->
+      <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">ADONIS CAR SHOP ADMINISTRADOR</div>
+        <div class="list-group list-group-flush">
+          <div>
+              <a href="/clientes" class="list-group-item list-group-item-action bg-light">CLIENTES</a>
+          </div>
+          <div>
+              <a href="/mecanico_responsable" class="list-group-item list-group-item-action bg-light">MECANICOS</a>
+          </div>
+          <div>
+              <a href="/repuestos" class="list-group-item list-group-item-action bg-light">REFACCIONES</a>
+          </div>
+          <div>
+              <a href="/factura" class="list-group-item list-group-item-action bg-light">TRANSACCIONES</a>
+          </div>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button class="btn btn-primary" id="menu-toggle">OCULTAR MENU</button>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">MENU PRINCIPAL<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">VIDEO EXPLICACION</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="container-fluid">
+          <h1 class="mt-4 mb-3">Seccion de FACTURAS</h1>
+          <div class="row">
+              <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                  <img class="card-img-top" src="https://www.helcim.com/pictures/an-overview-of-credit-card-processing-transaction-types-154818033111.png" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">CREAR FACTURA</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Crear factura para una hojad e partesr</h6>
+                    <a href="/factura/crear" class="btn btn-primary">Agregar FACTURA &rarr;</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#facturas">TABLA FACTURAS</a></li>
+            <li><a data-toggle="tab" href="#hojas">TABLA HOJAS DE PARTE</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="facturas" class="tab-pane fade in active">
+              <div class="jumbotron text-center">
+                <h3>FACTURAS CREADAS</h3>
+              </div>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th>ID FACTURA</th>
+                      <th>FECHA DE TRANSACCION</th>
+                      <th>IMPORTE EN PESOS</th>
+                      <th>IMPORTE EN DOLARES</th>
+                      <th>RFC DE FACTURA</th>
+                      <th>ID HOJA DE PARTE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @each(factura in facturas)
+                      <tr>
+                        <td>{{factura.id}}</td>
+                        <td>{{factura.FECHA}}</td>
+                        <td>{{factura.IMP_PESOS}}</td>
+                        <td>{{factura.IMP_DOL}}</td>
+                        <td>{{factura.RFC}}</td>
+                        <td>{{factura.idHOJAPARTE}}</td>
+                        <td>
+                          <li>
+                            <a class="btn btn-primary" href="/factura/eliminar/{{factura.id}}">Eliminar</a>
+                          </li>
+                        </td>
+                        </td>
+                      </tr>
+                    @endeach
+                  </tbody>
+              </table>
+            </div>
+            <div id="hojas" class="tab-pane fade">
+              <div class="jumbotron text-center">
+                <h3>TABLA DE HOJAS DE PARTES</h3>
+              </div>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th>ID HOJA</th>
+                      <th>CONCEPTO DE LA REPARACION</th>
+                      <th>CANTIDAD DE REFACCIONES</th>
+                      <th>OBJETO A REPARAR</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @each(hoja in hojas)
+                      <tr>
+                        <td>{{hoja.id}}</td>
+                        <td>{{hoja.CONCEPTO}}</td>
+                        <td>{{hoja.CANTIDAD}}</td>
+                        <td>{{hoja.REPARACION}}</td>
+                      </tr>
+                    @endeach
+                  </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /#page-content-wrapper -->
+
+    </div>
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+  </body>
+</html>
